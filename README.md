@@ -59,6 +59,12 @@ npx skills add hifizz/skills --skill <skill-name>
 | --- | --- | --- | --- |
 | _即将上线_ | | | |
 
+### 🚀 发布 / 上架 / 合规
+| Skill | 说明 | 博客 | 安装 |
+| --- | --- | --- | --- |
+| [creem-merchant-review](./skills/creem-merchant-review) | 「扩展 + 官网 + 订阅」形态提交 Creem（MoR 支付商户）审核前的上线前自查，产出带 ✅/⚠️/❌/❓ 判定的报告 | _待补_ | `npx skills add hifizz/skills --skill creem-merchant-review` |
+| [chrome-web-store-review](./skills/chrome-web-store-review) | Manifest V3 扩展提交 Chrome Web Store 审核前的自查（单一用途 / 权限理由 / 远程代码红线 / 数据声明 / 商店素材），产出判定报告 | _待补_ | `npx skills add hifizz/skills --skill chrome-web-store-review` |
+
 ## 🧠 工作原理
 
 - **一个含 `SKILL.md` 的文件夹 = 一个可独立安装的 skill。** 整个 repo 是一个 skill 集合。
