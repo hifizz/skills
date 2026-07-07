@@ -52,7 +52,7 @@ npx skills add hifizz/skills --skill <skill-name>
 ### ⚛️ 前端 / React / Vue
 | Skill | 说明 | 博客 | 安装 |
 | --- | --- | --- | --- |
-| _即将上线_ | | | |
+| [nextjs-sse-push](./skills/nextjs-sse-push) | 给 Next.js 一键装上「服务端主动推送」系统：SSE 长连接 + Redis Pub/Sub 跨实例广播 + BullMQ 延迟/定时任务 + 零依赖 React Hooks，以通道为核心、数据结构业务自定义 | [文章](./blog/nextjs-sse-push.md) | `npx skills add hifizz/skills --skill nextjs-sse-push` |
 
 ### 🛠️ 构建工具 / 工程化
 | Skill | 说明 | 博客 | 安装 |
