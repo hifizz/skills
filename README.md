@@ -53,6 +53,7 @@ npx skills add hifizz/skills --skill <skill-name>
 | Skill | 说明 | 博客 | 安装 |
 | --- | --- | --- | --- |
 | [nextjs-sse-push](./skills/nextjs-sse-push) | 给 Next.js 一键装上「服务端主动推送」系统：SSE 长连接 + Redis Pub/Sub 跨实例广播 + BullMQ 延迟/定时任务 + 零依赖 React Hooks，以通道为核心、数据结构业务自定义 | [文章](./blog/nextjs-sse-push.md) | `npx skills add hifizz/skills --skill nextjs-sse-push` |
+| [nextjs-r2-paid-media](./skills/nextjs-r2-paid-media) | 给 Next.js 一键装上「付费解锁媒体资源」系统：Cloudflare R2 私有桶 + 预签名 URL 限时访问 + 解锁扣费事务 + blurhash/高斯模糊付费预览 + headless PaidMediaProvider，计费/鉴权走 adapter、展示组件业务自定义 | [文章](./blog/nextjs-r2-paid-media.md) | `npx skills add hifizz/skills --skill nextjs-r2-paid-media` |
 
 ### 🛠️ 构建工具 / 工程化
 | Skill | 说明 | 博客 | 安装 |
