@@ -47,7 +47,7 @@ npx skills add hifizz/skills --skill <skill-name>
 ### ☁️ Cloudflare / Vercel / 部署
 | Skill | 说明 | 博客 | 安装 |
 | --- | --- | --- | --- |
-| _即将上线_ | | | |
+| [nextjs-cloudflare-image-loader](./skills/nextjs-cloudflare-image-loader) | 用 Cloudflare Image Transformations（R2 + /cdn-cgi/image）替代 Vercel 图片优化：10 行 custom loader 保留 next/image 全部能力、egress 降为 $0，含计费变体控制与全套坑位 checklist | [文章](./blog/nextjs-cloudflare-image-loader.md) | `npx skills add hifizz/skills --skill nextjs-cloudflare-image-loader` |
 
 ### ⚛️ 前端 / React / Vue
 | Skill | 说明 | 博客 | 安装 |

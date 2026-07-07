@@ -173,3 +173,4 @@ function MyMediaCell({ item }: { item: PaidMediaItem }) {
 - `upload-media.ts` 走服务端凭证直传，适合运营灌数据；如果要做「用户上传付费内容」，用 `r2.ts` 里的 `presignUpload` 另写路由，并在上传完成后回调校验（HEAD 对象确认存在再置 `isActive=true`）。
 - Serverless 部署（Vercel）完全兼容：预签名策略下服务器只做签名不传字节；只有 `content` 代理路由会吃函数时长/带宽，视频场景慎用代理策略。
 - 本 skill 是 v1（预签名 URL）方案，适合 MVP 快速落地。项目确定押注 Cloudflare、进入增长期后，建议按 `design-v2-worker-gateway.md` 演进为 Worker 媒体网关（URL 稳定不过期、秒级撤销、消除 N+1），解锁事务层和 Provider 对业务的契约不变。
+- 公开域名上的模糊缩略图等展示层图片，可配合 [[nextjs-cloudflare-image-loader]] skill 做响应式优化（/cdn-cgi/image URL 转换）。但**付费原图严禁**用 URL 转换做模糊付费墙——源图必须公开可访问，删掉 URL 里的转换段就是原图；模糊图必须离线生成（本 skill 的 upload-media.ts 方案）。
