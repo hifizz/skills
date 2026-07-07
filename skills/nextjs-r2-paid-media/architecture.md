@@ -2,6 +2,10 @@
 
 本文档解释这套系统的设计决定和取舍。模板代码见 `templates/`，安装步骤见 `SKILL.md`。
 
+> 本方案（v1，预签名 URL）在 Cloudflare 生态里存在一个演进版：**Worker 媒体网关**，
+> 消除 URL 续签状态机和画廊页 N+1，支持秒级撤销，见 `design-v2-worker-gateway.md`。
+> v1 适合 MVP / 单部署单元 / 非 Cloudflare 存储；确定押注 Cloudflare 且进入增长期后建议迁 v2。
+
 ## 1. 数据模型
 
 ```
