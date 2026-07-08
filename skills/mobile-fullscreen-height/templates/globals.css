@@ -1,0 +1,47 @@
+/* ============================================================
+ * 移动端全屏高度：两个方案，按场景选一个
+ *
+ *   营销 / 内容型  → 方案一：svh（纯 CSS，稳定不抖）
+ *   IM / 应用型     → 方案二：兼容性版本（JS 检测 + dvh + polyfill）
+ *
+ * svh / lvh / dvh 浏览器支持完全绑定（iOS 15.4 / Chrome 108 起）。
+ * ============================================================ */
+
+/* ---------- 方案一：svh（营销 / 内容型，纯 CSS，零 JS） ---------- */
+.h-svh-screen {
+  height: 100vh;   /* 兜底，必须写在前 */
+  height: 100svh;  /* 现代浏览器：稳定的小视口高度，滚动不 reflow */
+}
+
+/* ---------- 方案二：兼容性版本（IM / 应用型，配合 use-mobile-viewport） ----------
+ * 现代设备走 dvh（跟随工具栏 / 键盘动态变化，适合 IM）；
+ * 旧设备由 JS Hook 写入 --app-height 兜底；再兜底到 100vh。 */
+.h-dynamic-screen {
+  height: var(--app-height, 100vh);
+}
+@supports (height: 100dvh) {
+  .h-dynamic-screen {
+    height: 100dvh;
+  }
+}
+
+/* ---------- 通用配套（两个方案都适用） ---------- */
+html, body {
+  margin: 0;
+  overscroll-behavior: none; /* 防止整页被橡皮筋拖拽露出浏览器背景 */
+}
+
+/* 固定壳子 + 内部滚动：头尾固定，只有中间 main 滚动 */
+.app-shell {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  overflow: hidden;
+}
+.app-shell__main {
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* 刘海屏 / Home Indicator 安全区（配合 viewport-fit=cover） */
+.app-shell > header { padding-top: env(safe-area-inset-top); }
+.app-shell > footer { padding-bottom: env(safe-area-inset-bottom); }

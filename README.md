@@ -54,6 +54,7 @@ npx skills add hifizz/skills --skill <skill-name>
 | --- | --- | --- | --- |
 | [nextjs-sse-push](./skills/nextjs-sse-push) | 给 Next.js 一键装上「服务端主动推送」系统：SSE 长连接 + Redis Pub/Sub 跨实例广播 + BullMQ 延迟/定时任务 + 零依赖 React Hooks，以通道为核心、数据结构业务自定义 | [文章](./blog/nextjs-sse-push.md) | `npx skills add hifizz/skills --skill nextjs-sse-push` |
 | [nextjs-r2-paid-media](./skills/nextjs-r2-paid-media) | 给 Next.js 一键装上「付费解锁媒体资源」系统：Cloudflare R2 私有桶 + 预签名 URL 限时访问 + 解锁扣费事务 + blurhash/高斯模糊付费预览 + headless PaidMediaProvider，计费/鉴权走 adapter、展示组件业务自定义 | [文章](./blog/nextjs-r2-paid-media.md) | `npx skills add hifizz/skills --skill nextjs-r2-paid-media` |
+| [mobile-fullscreen-height](./skills/mobile-fullscreen-height) | 移动端 100vh「超高」/ 底部遮挡 / 滚动跳动的全屏高度适配，两个方案按场景选：营销/内容型用纯 CSS **svh**（稳定不抖、零 JS）；IM/应用型用**兼容性版本**（特性检测混合渐进增强，dvh + JS polyfill 兜底老设备与国内 WebView），含固定壳子 + 安全区 + 一键复制 Prompt | [文章](./blog/mobile-fullscreen-height.md) | `npx skills add hifizz/skills --skill mobile-fullscreen-height` |
 
 ### 🛠️ 构建工具 / 工程化
 | Skill | 说明 | 博客 | 安装 |
