@@ -118,6 +118,15 @@ _即将上线，敬请期待。_
 | 博客 | _待补_ |
 | 安装 | `npx skills add hifizz/skills --skill disk-scan` |
 
+### 🎬 媒体 / 内容
+
+| | |
+| --- | --- |
+| **Skill** | [web-video-encode](./skills/web-video-encode) |
+| 说明 | 用 ffmpeg 把录屏 / 视频转成"网页可直接嵌入"的资源，一份脚本适配多格式：H.264 MP4（文字密集 UI 录屏首选，比 GIF 清晰约 10 倍、体积小约 10 倍）、VP9 WebM（再小 ~30%）、调色板优化的 GIF；支持等比缩放控清晰度、CRF、帧率、裁剪、按时间截片段、导出 `<video poster>` 静帧 |
+| 博客 | _待补_ |
+| 安装 | `npx skills add hifizz/skills --skill web-video-encode` |
+
 ## 🧠 工作原理
 
 - **一个含 `SKILL.md` 的文件夹 = 一个可独立安装的 skill。** 整个 repo 是一个 skill 集合。
