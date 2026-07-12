@@ -82,6 +82,13 @@ _即将上线，敬请期待。_
 | 博客 | _待补_ |
 | 安装 | `npx skills add hifizz/skills --skill floating-popup-position` |
 
+| | |
+| --- | --- |
+| **Skill** | [text-highlight-recover](./skills/text-highlight-recover) |
+| 说明 | 网页文本高亮 / 划词批注的「模糊恢复」：存文本锚点（引用文本 + 前后上下文 + 字符偏移）而非 DOM 路径，页面重渲染 / 空白重排 / 正文被小幅编辑后，三层降级 position→exact→fuzzy 找回高亮；fuzzy 用编辑距离做近似子串匹配、容忍错字增删词并给相似度分数。零依赖单文件，[交互 Demo](https://playground.zilin.im/highlight-recovery) |
+| 博客 | [文章](./blog/text-highlight-recover.md) |
+| 安装 | `npx skills add hifizz/skills --skill text-highlight-recover` |
+
 ### 🛠️ 构建工具 / 工程化
 
 _即将上线，敬请期待。_
