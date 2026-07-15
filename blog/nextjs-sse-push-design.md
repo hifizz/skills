@@ -379,6 +379,8 @@ if (process.env.NODE_ENV !== 'production') g.__sseManager = sseManager;
 - **单频道广播有上限**。所有实例反序列化所有消息，万级并发内没问题；再往上可以按 userId 哈希分片频道（`sse:push:{shard}`），实例只订阅自己负责的分片。
 - **Vercel Serverless 不是理想宿主**。函数时长上限会周期性掐断 SSE（客户端自动重连，体验是偶发闪断），长连接体验要求高就用 Docker / Fly.io / Railway 跑常驻进程。
 
+> 续篇：[系统设计自评——这套系统做得怎么样？有没有更好的方案？](./nextjs-sse-push-review.md)，换评审视角把短板和替代方案说透。
+
 ---
 
 *系统的完整模板代码（后端 SSEManager / BullMQ / presence，前端 PushClient / Hooks）已沉淀为 Agent Skill：`npx skills add hifizz/skills --skill nextjs-sse-push`。本文同步于 [zilin.im](https://zilin.im)，源码见 [hifizz/skills](https://github.com/hifizz/skills)。*
