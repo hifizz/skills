@@ -89,4 +89,4 @@ clearHighlights(root, id);   // 单条；不传 id 清全部
 | --- | --- | --- |
 | `templates/text-anchor.ts` | `utils/text-anchor.ts`（任意） | 单文件：纯字符串三层定位（locateOffsets/fuzzySubstring）+ DOM 胶水（describeRange/locateAnchor/paintRange/clearHighlights），含注释与用法 |
 
-交互 Demo（划词存高亮 + 5 种「页面漂移」实时看命中策略与分数）：<https://playground.zilin.im/highlight-recovery>
+交互 Demo（荧光笔划词高亮 → 编辑正文 / 刷新页面 / 换种说法，实时看每条高亮是精确恢复还是近似恢复）：<https://playground.zilin.im/highlight-recovery>
