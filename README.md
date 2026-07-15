@@ -89,6 +89,12 @@ _即将上线，敬请期待。_
 | 博客 | [文章](./blog/text-highlight-recover.md) |
 | 安装 | `npx skills add hifizz/skills --skill text-highlight-recover` |
 
+| | |
+| --- | --- |
+| **Skill** | [create-interactive-hero](./skills/create-interactive-hero) |
+| 说明 | 给营销首屏做一个高保真、自动播放、可接管的交互式产品 Demo（设备 / 浏览器外壳 + 脚本化驱动产品真实 UI）：核心是「保真源于移植而非发明」——照搬真实组件的 icon / Tailwind class / design token / 关键帧动画；配套单状态对象 + 可取消自播种场景数组的时间线引擎、数据驱动模拟光标、章节 stepper + 播放/暂停、视口内自动播放与交互即暂停，含踩坑清单与可视化验证流程 |
+| 安装 | `npx skills add hifizz/skills --skill create-interactive-hero` |
+
 ### 🛠️ 构建工具 / 工程化
 
 _即将上线，敬请期待。_
