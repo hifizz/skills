@@ -1,0 +1,7 @@
+interface:
+  display_name: "Debug Hard"
+  short_description: "Four-stage workflow for complex debugging"
+  default_prompt: "Use $debug-hard to investigate this issue before making any changes."
+
+policy:
+  allow_implicit_invocation: false

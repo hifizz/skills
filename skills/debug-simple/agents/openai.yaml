@@ -1,0 +1,7 @@
+interface:
+  display_name: "Debug Simple"
+  short_description: "Fast workflow for narrow low-risk debugging"
+  default_prompt: "Use $debug-simple to fix this narrow, low-risk defect."
+
+policy:
+  allow_implicit_invocation: false

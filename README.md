@@ -97,7 +97,19 @@ _即将上线，敬请期待。_
 
 ### 🛠️ 构建工具 / 工程化
 
-_即将上线，敬请期待。_
+| | |
+| --- | --- |
+| **Skill** | [debug-simple](./skills/debug-simple) |
+| 说明 | 面向根因局部、修复路径唯一的低风险缺陷：一句复述 → 只读确认 → 简短说明 → 直接修复；一旦发现范围、根因或方案不确定，自动升级为 `debug-hard` |
+| 博客 | [文章](./blog/debug-simple.md) |
+| 安装 | `npx skills add hifizz/skills --skill debug-simple` |
+
+| | |
+| --- | --- |
+| **Skill** | [debug-hard](./skills/debug-hard) |
+| 说明 | 面向复杂、高风险或边界不清的调试：确认问题 → 只读诊断 → 确认方案 → 受控实现，防止局部打补丁、未经确认换架构或把质疑当作修改授权 |
+| 博客 | [文章](./blog/debug-hard.md) |
+| 安装 | `npx skills add hifizz/skills --skill debug-hard` |
 
 ### 🚀 发布 / 上架 / 合规
 
