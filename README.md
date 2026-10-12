@@ -99,6 +99,13 @@ _即将上线，敬请期待。_
 
 | | |
 | --- | --- |
+| **Skill** | [debug-root](./skills/debug-root) |
+| 说明 | 调试任务的统一入口：先只读确认根因，再按不确定性和影响分流；低风险且路径唯一时直接最小修复，否则先确认方案再实施 |
+| 博客 | [文章](./blog/debug-root.md) |
+| 安装 | `npx skills add hifizz/skills --skill debug-root` |
+
+| | |
+| --- | --- |
 | **Skill** | [debug-simple](./skills/debug-simple) |
 | 说明 | 面向根因局部、修复路径唯一的低风险缺陷：一句复述 → 只读确认 → 简短说明 → 直接修复；一旦发现范围、根因或方案不确定，自动升级为 `debug-hard` |
 | 博客 | [文章](./blog/debug-simple.md) |

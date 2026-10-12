@@ -1,0 +1,4 @@
+interface:
+  display_name: "Debug Root"
+  short_description: "Root-cause-first debugging workflow"
+  default_prompt: "Use $debug-root to diagnose the root cause and choose the appropriate repair workflow."
