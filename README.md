@@ -4,169 +4,74 @@
 
 **zilin（[@hifizz](https://github.com/hifizz)）的个人 Agent Skills 库**
 
-日常开发中真实在用的能力，沉淀成可安装、可分享的 skill。
+日常开发中真实在用的能力，沉淀成可安装的 skill。
 
 [![skills.sh](https://skills.sh/b/hifizz/skills)](https://skills.sh/hifizz/skills)
-[![Agent Skills](https://img.shields.io/badge/standard-agentskills.io-6E56CF)](https://agentskills.io)
-[![Blog](https://img.shields.io/badge/blog-zilin.im-0A0A0A)](https://zilin.im)
 [![License](https://img.shields.io/badge/license-MIT-green)](./LICENSE)
-
-[安装](#-安装) · [Skills 索引](#-skills-索引) · [工作原理](#-工作原理) · [关于](#-关于)
 
 </div>
 
 ---
 
-## ✨ 这是什么
-
-一个 **monorepo 形式的 skill 集合**。这里的每个 skill 都不是 demo，而是我在真实开发里反复用到、抽象沉淀下来的能力——股票投研、Cloudflare / Vercel 部署、React / Vue 组件、构建工程化……
-
-遵循 [agentskills.io](https://agentskills.io) 开放标准，可被 Claude Code、Cursor、Codex、OpenCode 等 50+ agent 自动发现与安装。每个 skill 的来龙去脉会写在博客里：<https://zilin.im>。
-
 ## 📦 安装
 
 ```bash
-# 安装全部 skill
+# 安装全部
 npx skills add hifizz/skills
 
-# 只装某一个
+# 只装一个
 npx skills add hifizz/skills --skill <skill-name>
 ```
 
-装完即用——skill 会被你的 agent 自动发现，无需手动注册命令。关闭匿名遥测加 `DISABLE_TELEMETRY=1`。
+## 📚 Skills
 
-## 📚 Skills 索引
+### Next.js / Cloudflare
 
-> 🚧 持续更新中。每个 skill 一张竖表（手机上不横向滚动），点 skill 名进源码，「博客」行是它的来龙去脉。
-
-### 📈 股票 / 投研
-
-_即将上线，敬请期待。_
-
-### ☁️ Cloudflare / Vercel / 部署
-
-| | |
+| Skill | 作用 |
 | --- | --- |
-| **Skill** | [nextjs-cloudflare-image-loader](./skills/nextjs-cloudflare-image-loader) |
-| 说明 | 用 Cloudflare Image Transformations（R2 + /cdn-cgi/image）替代 Vercel 图片优化：10 行 custom loader 保留 next/image 全部能力、egress 降为 $0，含计费变体控制与全套坑位 checklist |
-| 博客 | [文章](./blog/nextjs-cloudflare-image-loader.md) |
-| 安装 | `npx skills add hifizz/skills --skill nextjs-cloudflare-image-loader` |
+| [nextjs-sse-push](./skills/nextjs-sse-push) | 服务端主动推送：SSE + Redis 跨实例广播 + BullMQ 定时任务 + React Hooks |
+| [nextjs-r2-paid-media](./skills/nextjs-r2-paid-media) | 付费解锁图片 / 视频：R2 私有桶 + 限时签名 URL + 扣费 + 模糊预览 |
+| [nextjs-cloudflare-image-loader](./skills/nextjs-cloudflare-image-loader) | 用 Cloudflare 图片转换替代 Vercel 图片优化，流量成本降为 0 |
 
-### ⚛️ 前端 / React / Vue
+### 前端体验
 
-| | |
+| Skill | 作用 |
 | --- | --- |
-| **Skill** | [nextjs-sse-push](./skills/nextjs-sse-push) |
-| 说明 | 给 Next.js 一键装上「服务端主动推送」系统：SSE 长连接 + Redis Pub/Sub 跨实例广播 + BullMQ 延迟/定时任务 + 零依赖 React Hooks，以通道为核心、数据结构业务自定义 |
-| 博客 | [文章](./blog/nextjs-sse-push.md) |
-| 安装 | `npx skills add hifizz/skills --skill nextjs-sse-push` |
+| [mobile-fullscreen-height](./skills/mobile-fullscreen-height) | 修复移动端 100vh 超高、底部按钮被遮挡、滚动跳动 |
+| [floating-popup-position](./skills/floating-popup-position) | 划词工具条等选区浮层的定位算法，永不被裁切 |
+| [text-highlight-recover](./skills/text-highlight-recover) | 页面重渲染后，用文本锚点模糊找回网页高亮 |
+| [create-interactive-hero](./skills/create-interactive-hero) | 营销首屏里的可交互产品 Demo，自动播放真实 UI |
 
-| | |
+### 调试
+
+| Skill | 作用 |
 | --- | --- |
-| **Skill** | [nextjs-r2-paid-media](./skills/nextjs-r2-paid-media) |
-| 说明 | 给 Next.js 一键装上「付费解锁媒体资源」系统：Cloudflare R2 私有桶 + 预签名 URL 限时访问 + 解锁扣费事务 + blurhash/高斯模糊付费预览 + headless PaidMediaProvider，计费/鉴权走 adapter、展示组件业务自定义 |
-| 博客 | [文章](./blog/nextjs-r2-paid-media.md) |
-| 安装 | `npx skills add hifizz/skills --skill nextjs-r2-paid-media` |
+| [debug-root](./skills/debug-root) | 调试总入口：先定根因，再按风险决定直接修或先确认 |
+| [debug-simple](./skills/debug-simple) | 低风险、修复路径唯一的小 bug，快速定位并修复 |
+| [debug-hard](./skills/debug-hard) | 复杂 / 高风险 bug：先诊断、确认方案，再受控修改 |
 
-| | |
+### 上架自查
+
+| Skill | 作用 |
 | --- | --- |
-| **Skill** | [mobile-fullscreen-height](./skills/mobile-fullscreen-height) |
-| 说明 | 移动端 100vh「超高」/ 底部遮挡 / 滚动跳动的全屏高度适配，两个方案按场景选：营销/内容型用纯 CSS **svh**（稳定不抖、零 JS）；IM/应用型用**兼容性版本**（特性检测混合渐进增强，dvh + JS polyfill 兜底老设备与国内 WebView），含固定壳子 + 安全区 + 一键复制 Prompt |
-| 博客 | [文章](./blog/mobile-fullscreen-height.md) |
-| 安装 | `npx skills add hifizz/skills --skill mobile-fullscreen-height` |
+| [creem-merchant-review](./skills/creem-merchant-review) | 提交 Creem 支付商户审核前的上线自查报告 |
+| [chrome-web-store-review](./skills/chrome-web-store-review) | 提交 Chrome Web Store 审核前的 MV3 扩展自查报告 |
 
-| | |
+### 效率 / 媒体
+
+| Skill | 作用 |
 | --- | --- |
-| **Skill** | [floating-popup-position](./skills/floating-popup-position) |
-| 说明 | 选区浮层（划词工具条 / AI 解释卡）定位算法：在 ContainerRect 内围绕 SelectedRect 按 右→下→左→上 择位，交叉轴居中越界滑动、永不被裁切；四边都放不下时取遮挡选区面积最小的兜底位。零依赖纯函数，[交互 Demo](https://playground.zilin.im/floating-popup) |
-| 博客 | _待补_ |
-| 安装 | `npx skills add hifizz/skills --skill floating-popup-position` |
-
-| | |
-| --- | --- |
-| **Skill** | [text-highlight-recover](./skills/text-highlight-recover) |
-| 说明 | 网页文本高亮 / 划词批注的「模糊恢复」：存文本锚点（引用文本 + 前后上下文 + 字符偏移）而非 DOM 路径，页面重渲染 / 空白重排 / 正文被小幅编辑后，三层降级 position→exact→fuzzy 找回高亮；fuzzy 用编辑距离做近似子串匹配、容忍错字增删词并给相似度分数。零依赖单文件，[交互 Demo](https://playground.zilin.im/highlight-recovery) |
-| 博客 | [文章](./blog/text-highlight-recover.md) |
-| 安装 | `npx skills add hifizz/skills --skill text-highlight-recover` |
-
-| | |
-| --- | --- |
-| **Skill** | [create-interactive-hero](./skills/create-interactive-hero) |
-| 说明 | 给营销首屏做一个高保真、自动播放、可接管的交互式产品 Demo（设备 / 浏览器外壳 + 脚本化驱动产品真实 UI）：核心是「保真源于移植而非发明」——照搬真实组件的 icon / Tailwind class / design token / 关键帧动画；配套单状态对象 + 可取消自播种场景数组的时间线引擎、数据驱动模拟光标、章节 stepper + 播放/暂停、视口内自动播放与交互即暂停，含踩坑清单与可视化验证流程 |
-| 安装 | `npx skills add hifizz/skills --skill create-interactive-hero` |
-
-### 🛠️ 构建工具 / 工程化
-
-| | |
-| --- | --- |
-| **Skill** | [debug-root](./skills/debug-root) |
-| 说明 | 调试任务的统一入口：先只读确认根因，再按不确定性和影响分流；低风险且路径唯一时直接最小修复，否则先确认方案再实施 |
-| 博客 | [文章](./blog/debug-root.md) |
-| 安装 | `npx skills add hifizz/skills --skill debug-root` |
-
-| | |
-| --- | --- |
-| **Skill** | [debug-simple](./skills/debug-simple) |
-| 说明 | 面向根因局部、修复路径唯一的低风险缺陷：一句复述 → 只读确认 → 简短说明 → 直接修复；一旦发现范围、根因或方案不确定，自动升级为 `debug-hard` |
-| 博客 | [文章](./blog/debug-simple.md) |
-| 安装 | `npx skills add hifizz/skills --skill debug-simple` |
-
-| | |
-| --- | --- |
-| **Skill** | [debug-hard](./skills/debug-hard) |
-| 说明 | 面向复杂、高风险或边界不清的调试：确认问题 → 只读诊断 → 确认方案 → 受控实现，防止局部打补丁、未经确认换架构或把质疑当作修改授权 |
-| 博客 | [文章](./blog/debug-hard.md) |
-| 安装 | `npx skills add hifizz/skills --skill debug-hard` |
-
-### 🚀 发布 / 上架 / 合规
-
-| | |
-| --- | --- |
-| **Skill** | [creem-merchant-review](./skills/creem-merchant-review) |
-| 说明 | 「扩展 + 官网 + 订阅」形态提交 Creem（MoR 支付商户）审核前的上线前自查，产出带 ✅/⚠️/❌/❓ 判定的报告 |
-| 博客 | _待补_ |
-| 安装 | `npx skills add hifizz/skills --skill creem-merchant-review` |
-
-| | |
-| --- | --- |
-| **Skill** | [chrome-web-store-review](./skills/chrome-web-store-review) |
-| 说明 | Manifest V3 扩展提交 Chrome Web Store 审核前的自查（单一用途 / 权限理由 / 远程代码红线 / 数据声明 / 商店素材），产出判定报告 |
-| 博客 | _待补_ |
-| 安装 | `npx skills add hifizz/skills --skill chrome-web-store-review` |
-
-### 🖥️ 系统 / 效率
-
-| | |
-| --- | --- |
-| **Skill** | [disk-scan](./skills/disk-scan) |
-| 说明 | 只读扫描 macOS 磁盘占用，拆解储存面板里笼统的 "System Data" 分类（Docker / Xcode 缓存 / 包管理器缓存 / App 数据 / 容器沙箱等），产出按大小排序的汇总表，绝不删除或修改文件 |
-| 博客 | _待补_ |
-| 安装 | `npx skills add hifizz/skills --skill disk-scan` |
-
-### 🎬 媒体 / 内容
-
-| | |
-| --- | --- |
-| **Skill** | [web-video-encode](./skills/web-video-encode) |
-| 说明 | 用 ffmpeg 把录屏 / 视频转成"网页可直接嵌入"的资源，一份脚本适配多格式：H.264 MP4（文字密集 UI 录屏首选，比 GIF 清晰约 10 倍、体积小约 10 倍）、VP9 WebM（再小 ~30%）、调色板优化的 GIF；支持等比缩放控清晰度、CRF、帧率、裁剪、按时间截片段、导出 `<video poster>` 静帧 |
-| 博客 | _待补_ |
-| 安装 | `npx skills add hifizz/skills --skill web-video-encode` |
-
-## 🧠 工作原理
-
-- **一个含 `SKILL.md` 的文件夹 = 一个可独立安装的 skill。** 整个 repo 是一个 skill 集合。
-- **Skill ≠ slash command。** Agent 会读取每个 skill 的 `description`，在合适场景**自动调用**（progressive disclosure），不需要你手敲 `/xxx`。
-- **跨 agent 通用。** 遵循 agentskills.io 标准，一次编写，多家 agent 可用。
-- **版本可追踪。** CLI 按 git tree SHA 检测内容变更，`npx skills update` 能跟上更新。
-
-## 🙋 关于
-
-我是 **zilin（[@hifizz](https://github.com/hifizz)）**，前端工程师，常驻北京。
-
-- 🌐 博客：<https://zilin.im>
-- 🐦 新 skill 与文章会同步发到 Twitter/X
-- 💡 觉得某个 skill 有用，欢迎 star / 安装
+| [disk-scan](./skills/disk-scan) | 只读拆解 macOS 的「System Data」，找出可清理的空间，不删文件 |
+| [web-video-encode](./skills/web-video-encode) | 录屏转网页可嵌入的 MP4 / WebM / GIF，附 poster 静帧 |
 
 ## 📄 License
 
 [MIT](./LICENSE) © zilin
+
+---
+
+<div align="center">
+
+🌐 博客 [zilin.im](https://zilin.im) · 🐦 新 skill 与文章同步发布在 Twitter/X
+
+</div>
