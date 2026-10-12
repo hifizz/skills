@@ -64,6 +64,15 @@ npx skills add hifizz/skills --skill <skill-name>
 | [disk-scan](./skills/disk-scan) | 只读拆解 macOS 的「System Data」，找出可清理的空间，不删文件 |
 | [web-video-encode](./skills/web-video-encode) | 录屏转网页可嵌入的 MP4 / WebM / GIF，附 poster 静帧 |
 
+### 自托管平台
+
+_独立仓库，安装方式见各自 README。_
+
+| Skill | 作用 |
+| --- | --- |
+| [coolify-ops-skill](https://github.com/hifizz/coolify-ops-skill) | 通过官方 coolify CLI 远程部署、运维、排查自托管 Coolify 上的应用 / 服务 / 数据库 |
+| [openship-skill](https://github.com/hifizz/openship-skill) | 通过 openship CLI 与 REST API 运维 Openship 项目、部署与自托管实例 |
+
 ## 📄 License
 
 [MIT](./LICENSE) © zilin
